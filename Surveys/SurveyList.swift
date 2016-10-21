@@ -12,6 +12,8 @@ class SurveyList: UIPageViewController {
   @IBOutlet weak var surveyTitle: UILabel!
   @IBOutlet weak var surveySubtitle: UILabel!
   @IBOutlet weak var takeSurvey: UIButton!
+  
+  var surveys: [Survey]?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -20,6 +22,8 @@ class SurveyList: UIPageViewController {
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     
-    SurveyNetworking.sharedInstance.requestApi()
+    SurveyNetworking.sharedInstance.requestApi() { survey in
+      self.surveys = survey
+    }
   }
 }

@@ -15,7 +15,7 @@ class Survey: Mappable {
   var surveyBackgroundImage : String?
   
   required init?(_ map: Map){
-    print(map)
+  
   }
   
   func mapping(map: Map) {
