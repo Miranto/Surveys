@@ -7,6 +7,7 @@ target 'Surveys' do
   use_frameworks!
 
   # Pods for Surveys
+  pod 'Alamofire', '~> 3.0'
 
   target 'SurveysTests' do
     inherit! :search_paths

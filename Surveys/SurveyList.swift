@@ -6,8 +6,20 @@
 //  Copyright © 2016 testMateusz Mirkowski. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class SurveyList: UIPageViewController {
+  @IBOutlet weak var surveyTitle: UILabel!
+  @IBOutlet weak var surveySubtitle: UILabel!
+  @IBOutlet weak var takeSurvey: UIButton!
 
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+  }
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    SurveyNetworking.sharedInstance.requestApi()
+  }
 }
