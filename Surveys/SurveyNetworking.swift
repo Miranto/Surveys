@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import AlamofireObjectMapper
 
 struct NetworkStatic {
   static let mainApi = "https://www-staging.usay.co/app/surveys.json"
@@ -19,11 +20,19 @@ class SurveyNetworking {
   
   func requestApi() {
     let surveyEndPoint = NetworkStatic.mainApi + "?access_token=" + NetworkStatic.token
-    Alamofire.request(.GET, surveyEndPoint) .responseJSON { response in
+    Alamofire.request(.GET, surveyEndPoint).responseArray { (response: Response<[Survey], NSError>) in
     
-      if let JSON = response.result.value {
-        print("JSON: \(JSON)")
+      let surveyResponse = response.result.value
+      
+      if let surveysArray = surveyResponse {
+        for survey in surveysArray {
+          print(survey.surveyTitle)
+          print(survey.surveySubTitle)
+          print(survey.surveyBackgroundImage)
+        }
       }
+      print(surveyResponse?.count)
     }
+
   }
 }

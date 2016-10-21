@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		04607E0268B533B448090E9B /* Pods_Surveys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506C372EFB2FFB7E9B181B1A /* Pods_Surveys.framework */; };
+		612D461E1DBA20F30099487A /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6159BAC41DBA17700041F88D /* Survey.swift */; };
+		612D461F1DBA20F40099487A /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6159BAC41DBA17700041F88D /* Survey.swift */; };
 		6159BAC51DBA17700041F88D /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6159BAC41DBA17700041F88D /* Survey.swift */; };
 		61D9C6701DB8C43F00433278 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D9C66F1DB8C43E00433278 /* AppDelegate.swift */; };
 		61D9C6751DB8C43F00433278 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61D9C6731DB8C43F00433278 /* Main.storyboard */; };
@@ -469,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61D9C6851DB8C43F00433278 /* SurveysTests.swift in Sources */,
+				612D461E1DBA20F30099487A /* Survey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61D9C6901DB8C44000433278 /* SurveysUITests.swift in Sources */,
+				612D461F1DBA20F40099487A /* Survey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

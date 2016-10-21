@@ -7,3 +7,20 @@
 //
 
 import Foundation
+import ObjectMapper
+
+class Survey: Mappable {
+  var surveyTitle : String?
+  var surveySubTitle : String?
+  var surveyBackgroundImage : String?
+  
+  required init?(_ map: Map){
+    print(map)
+  }
+  
+  func mapping(map: Map) {
+    surveyTitle <- map["title"]
+    surveySubTitle <- map["type"]
+    surveyBackgroundImage <- map["cover_image_url"]
+  }
+}

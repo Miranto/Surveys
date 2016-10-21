@@ -8,6 +8,7 @@ target 'Surveys' do
 
   # Pods for Surveys
   pod 'Alamofire', '~> 3.0'
+  pod 'AlamofireObjectMapper', '~> 3.0’
 
   target 'SurveysTests' do
     inherit! :search_paths
