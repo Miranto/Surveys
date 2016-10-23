@@ -12,9 +12,13 @@ import SwiftSpinner
 
 class SurveyList: UIPageViewController {
   
+  // MARK: Properties
+  
   var surveys: [Survey]?
   var pageControl: UIPageControl!
   var pageIndex: Int!
+  
+  // MARK: Lifecycles Methods
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -31,7 +35,7 @@ class SurveyList: UIPageViewController {
     setupNavigationBar()
   }
   
-  // MARK: Setup View
+  // MARK: Setup Views
   
   func setupNavigationBar() {
     let refreshBar: UIBarButtonItem = UIBarButtonItem.init(barButtonSystemItem:.Refresh, target: self, action: #selector(SurveyList.getSurveys))

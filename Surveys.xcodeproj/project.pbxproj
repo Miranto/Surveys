@@ -97,6 +97,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		61D59FDE1DBCF6BA0025B28A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				61D9C69F1DB8C52900433278 /* SurveyList.swift */,
+				61885CAB1DBB607700E753A9 /* SurveyPage.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		61D59FDF1DBCF6C30025B28A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				61D9C6A21DB8E2D600433278 /* SurveyNetworking.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		61D59FE01DBCF6DF0025B28A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6159BAC41DBA17700041F88D /* Survey.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		61D9C6631DB8C43E00433278 = {
 			isa = PBXGroup;
 			children = (
@@ -153,10 +178,9 @@
 		61D9C6A11DB8E29300433278 /* Survey */ = {
 			isa = PBXGroup;
 			children = (
-				61D9C69F1DB8C52900433278 /* SurveyList.swift */,
-				61D9C6A21DB8E2D600433278 /* SurveyNetworking.swift */,
-				61885CAB1DBB607700E753A9 /* SurveyPage.swift */,
-				6159BAC41DBA17700041F88D /* Survey.swift */,
+				61D59FDE1DBCF6BA0025B28A /* Controllers */,
+				61D59FDF1DBCF6C30025B28A /* Networking */,
+				61D59FE01DBCF6DF0025B28A /* Models */,
 			);
 			name = Survey;
 			sourceTree = "<group>";
