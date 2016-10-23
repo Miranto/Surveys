@@ -11,6 +11,7 @@
 		612D461E1DBA20F30099487A /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6159BAC41DBA17700041F88D /* Survey.swift */; };
 		612D461F1DBA20F40099487A /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6159BAC41DBA17700041F88D /* Survey.swift */; };
 		6159BAC51DBA17700041F88D /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6159BAC41DBA17700041F88D /* Survey.swift */; };
+		61885CAC1DBB607700E753A9 /* SurveyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61885CAB1DBB607700E753A9 /* SurveyPage.swift */; };
 		61D9C6701DB8C43F00433278 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D9C66F1DB8C43E00433278 /* AppDelegate.swift */; };
 		61D9C6751DB8C43F00433278 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61D9C6731DB8C43F00433278 /* Main.storyboard */; };
 		61D9C6771DB8C43F00433278 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61D9C6761DB8C43F00433278 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		506C372EFB2FFB7E9B181B1A /* Pods_Surveys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Surveys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B4AECA4BB1F9C19706C489 /* Pods-Surveys.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Surveys/Pods-Surveys.debug.xcconfig"; sourceTree = "<group>"; };
 		6159BAC41DBA17700041F88D /* Survey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
+		61885CAB1DBB607700E753A9 /* SurveyPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyPage.swift; sourceTree = "<group>"; };
 		61D9C66C1DB8C43E00433278 /* Surveys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surveys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61D9C66F1DB8C43E00433278 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61D9C6741DB8C43F00433278 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				61D9C69F1DB8C52900433278 /* SurveyList.swift */,
 				61D9C6A21DB8E2D600433278 /* SurveyNetworking.swift */,
+				61885CAB1DBB607700E753A9 /* SurveyPage.swift */,
 				6159BAC41DBA17700041F88D /* Survey.swift */,
 			);
 			name = Survey;
@@ -462,6 +465,7 @@
 				61D9C6701DB8C43F00433278 /* AppDelegate.swift in Sources */,
 				6159BAC51DBA17700041F88D /* Survey.swift in Sources */,
 				61D9C6A31DB8E2D600433278 /* SurveyNetworking.swift in Sources */,
+				61885CAC1DBB607700E753A9 /* SurveyPage.swift in Sources */,
 				61D9C6A01DB8C52900433278 /* SurveyList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

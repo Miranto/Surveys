@@ -4,16 +4,19 @@ PODS:
     - Alamofire (~> 3.2)
     - ObjectMapper (~> 1.0)
   - ObjectMapper (1.5.0)
+  - SwiftSpinner (0.9.5)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
   - AlamofireObjectMapper (~> 3.0)
+  - SwiftSpinner (~> 0.9.5)
 
 SPEC CHECKSUMS:
   Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
   AlamofireObjectMapper: 70f97cbf45c01c48d26aa07a1a7059a60ed7411d
   ObjectMapper: 386645adca9d9d23b95eda43090b09d66444cf14
+  SwiftSpinner: c6585a0ae5c67eb33e737695cce88f0262008cce
 
-PODFILE CHECKSUM: f2ea6ef9fe567b3e1ae4d6a2356a09af9fdb39cc
+PODFILE CHECKSUM: 53fb650c7492d2b6dc7595c37fe65d5ad7905c62
 
 COCOAPODS: 1.1.0

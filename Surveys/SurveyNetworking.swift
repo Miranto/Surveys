@@ -18,22 +18,24 @@ struct NetworkStatic {
 class SurveyNetworking {
   static let sharedInstance = SurveyNetworking()
   
-  func requestApi(completion: ([Survey]) -> Void) {
+  func requestSurveyApi(completion: ([Survey]) -> Void, failure: (NSError) -> Void) {
     let surveyEndPoint = NetworkStatic.mainApi + "?access_token=" + NetworkStatic.token
     Alamofire.request(.GET, surveyEndPoint).responseArray { (response: Response<[Survey], NSError>) in
     
-      let surveyResponse = response.result.value
-      
-      if let surveysArray = surveyResponse {
-        for survey in surveysArray {
-          print(survey.surveyTitle)
-          print(survey.surveySubTitle)
-          print(survey.surveyBackgroundImage)
-        }
+      switch response.result {
+      case .Success:
+        let surveyResponse = response.result.value
+        
+        print("success")
+        
+        completion(surveyResponse!)
+        
+      case .Failure(let error):
+        print("failure")
+        
+        failure(error)
       }
-      completion(surveyResponse!)
-      print(surveyResponse?.count)
     }
-
   }
+  
 }

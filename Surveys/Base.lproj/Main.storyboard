@@ -1,68 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2338c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LAX-wO-39u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2338c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="v40-GQ-gsT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Survey List-->
-        <scene sceneID="fif-yX-ai5">
+        <!--Survey Page-->
+        <scene sceneID="k1W-cg-j3Y">
             <objects>
-                <viewController id="LAX-wO-39u" customClass="SurveyList" customModule="Surveys" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wdZ-mc-Cj0"/>
-                        <viewControllerLayoutGuide type="bottom" id="bH0-fY-ge5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0ye-NN-wmm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7M-g2-rcL">
-                                <rect key="frame" x="20" y="274" width="560" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="npR-9T-sC8">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Surveys" id="rll-Qh-kPA">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="LbF-6s-a2P">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" id="Igg-kX-VJE"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AE-D4-zyu">
-                                <rect key="frame" x="20" y="449" width="560" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9p-v7-UZc">
-                                <rect key="frame" x="20" y="188" width="560" height="21"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Label">
-                                        <attributes>
-                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" size="20" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                <viewController storyboardIdentifier="SurveyPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gwh-XO-qZu" customClass="SurveyPage" customModule="Surveys" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
-                        <outlet property="surveySubtitle" destination="Z7M-g2-rcL" id="SXX-Kt-M0A"/>
-                        <outlet property="surveyTitle" destination="D9p-v7-UZc" id="ZWf-pa-YFF"/>
-                        <outlet property="takeSurvey" destination="7AE-D4-zyu" id="5wH-KJ-cAo"/>
+                        <outlet property="surveySubtitle" destination="Z7M-g2-rcL" id="Vaz-ZN-xYh"/>
+                        <outlet property="surveyTitle" destination="D9p-v7-UZc" id="dBG-Ga-dtE"/>
+                        <outlet property="takeSurvey" destination="7AE-D4-zyu" id="Jak-fm-khq"/>
+                        <outlet property="view" destination="0ye-NN-wmm" id="owL-Ac-j2U"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8h8-Pm-FCK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hyb-EC-MYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="0ye-NN-wmm">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7M-g2-rcL">
+                            <rect key="frame" x="20" y="274" width="560" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="7O5-hS-0bE"/>
+                                <constraint firstAttribute="width" constant="560" id="KPN-fh-MGx"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="560" id="S5R-Vq-2LG"/>
+                                <constraint firstAttribute="height" constant="21" id="SYz-g2-G3d"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AE-D4-zyu">
+                            <rect key="frame" x="234" y="425" width="133" height="30"/>
+                            <color key="backgroundColor" red="1" green="0.12457194845457131" blue="0.21845141422650483" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="MXi-uv-2bm"/>
+                                <constraint firstAttribute="width" constant="133" id="ZOj-Mp-mqp"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="133" id="efZ-26-uLC"/>
+                                <constraint firstAttribute="height" constant="30" id="sA2-9b-prM"/>
+                            </constraints>
+                            <state key="normal" title="Take the survey">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="startSurvey:" destination="Gwh-XO-qZu" eventType="touchUpInside" id="CcR-dM-mcf"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9p-v7-UZc">
+                            <rect key="frame" x="20" y="188" width="560" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="560" id="CXs-PA-MD9"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Jkm-QM-aYL"/>
+                                <constraint firstAttribute="width" constant="560" id="UU0-FF-1FS"/>
+                                <constraint firstAttribute="height" constant="21" id="moK-eF-bW2"/>
+                            </constraints>
+                            <attributedString key="attributedText">
+                                <fragment content="Label">
+                                    <attributes>
+                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <font key="NSFont" size="20" name="HelveticaNeue-Bold"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="7AE-D4-zyu" firstAttribute="centerX" secondItem="0ye-NN-wmm" secondAttribute="centerX" id="Tp3-qE-ueZ"/>
+                        <constraint firstItem="Z7M-g2-rcL" firstAttribute="top" secondItem="D9p-v7-UZc" secondAttribute="bottom" constant="65" id="hAn-b9-oC9"/>
+                        <constraint firstItem="D9p-v7-UZc" firstAttribute="centerX" secondItem="0ye-NN-wmm" secondAttribute="centerX" id="iat-Rp-vzR"/>
+                        <constraint firstItem="D9p-v7-UZc" firstAttribute="top" secondItem="0ye-NN-wmm" secondAttribute="top" constant="188" id="sPH-v0-cAb"/>
+                        <constraint firstItem="Z7M-g2-rcL" firstAttribute="centerX" secondItem="0ye-NN-wmm" secondAttribute="centerX" id="tTA-Cx-dJF"/>
+                    </constraints>
+                </view>
             </objects>
-            <point key="canvasLocation" x="987" y="175"/>
+            <point key="canvasLocation" x="1670" y="-742"/>
+        </scene>
+        <!--Survey List-->
+        <scene sceneID="xs6-jg-ydT">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="vertical" spineLocation="none" id="fbC-4U-BfW" customClass="SurveyList" customModule="Surveys" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="lIn-Zy-D0r"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pQK-aM-GCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1665" y="-62"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cxs-q1-J0G">
+            <objects>
+                <viewController storyboardIdentifier="SurveyDetails" id="OEL-gG-L1G" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gaq-0v-suq"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fhj-7v-txi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iLI-zV-2rF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VLX-nu-sbQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1665" y="602"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YJJ-AK-1dL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v40-GQ-gsT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="S7r-RW-eeZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fbC-4U-BfW" kind="relationship" relationship="rootViewController" id="vd3-dE-oo4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ca-uo-QrS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationItem title="Surveys" id="I7h-m1-6pY">
+                    <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="OFS-0J-eX8">
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="refreshView:" destination="Gwh-XO-qZu" id="MvV-yX-sw0"/>
+                        </connections>
+                    </barButtonItem>
+                    <barButtonItem key="rightBarButtonItem" title="Item" id="dPv-Hn-Cr8"/>
+                </navigationItem>
+                <navigationBar contentMode="scaleToFill" id="npR-9T-sC8">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <textAttributes key="titleTextAttributes">
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </textAttributes>
+                </navigationBar>
+            </objects>
+            <point key="canvasLocation" x="853" y="-62"/>
         </scene>
     </scenes>
 </document>

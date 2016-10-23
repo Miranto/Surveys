@@ -23,4 +23,5 @@ class Survey: Mappable {
     surveySubTitle <- map["type"]
     surveyBackgroundImage <- map["cover_image_url"]
   }
+  
 }
