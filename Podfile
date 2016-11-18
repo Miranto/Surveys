@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 
 target 'Surveys' do
@@ -7,8 +7,8 @@ target 'Surveys' do
   use_frameworks!
 
   # Pods for Surveys
-  pod 'Alamofire', '~> 3.0'
-  pod 'AlamofireObjectMapper', '~> 3.0’
+  pod 'Alamofire', '~> 4.0'
+  pod 'AlamofireObjectMapper', '~> 4.0'
   pod "SwiftSpinner”,  '~> 0.9.5’
 
   target 'SurveysTests' do

@@ -29,35 +29,36 @@ class SurveyList: UIPageViewController {
     getSurveys()
   }
   
-  override func viewWillAppear(animated: Bool) {
+  override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
     setupNavigationBar()
   }
   
+  
   // MARK: Setup Views
   
   func setupNavigationBar() {
-    let refreshBar: UIBarButtonItem = UIBarButtonItem.init(barButtonSystemItem:.Refresh, target: self, action: #selector(SurveyList.getSurveys))
+    let refreshBar: UIBarButtonItem = UIBarButtonItem.init(barButtonSystemItem:.refresh, target: self, action: #selector(SurveyList.getSurveys))
     
-    let menuBar: UIBarButtonItem = UIBarButtonItem.init(barButtonSystemItem:.Action, target: self, action: nil)
+    let menuBar: UIBarButtonItem = UIBarButtonItem.init(barButtonSystemItem:.action, target: self, action: nil)
     
     self.navigationItem.leftBarButtonItem = refreshBar
     self.navigationItem.rightBarButtonItem = menuBar
     
-    navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+    navigationController?.navigationBar.tintColor = UIColor.white
     
     self.navigationItem.title = "Survey"
   }
   
   func configurePageControl() {
     let width = self.view.frame.size.width
-    self.pageControl = UIPageControl(frame: CGRectMake(width-120, 300, 200, 20))
-    self.pageControl.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
+    self.pageControl = UIPageControl(frame: CGRect(x: width-120, y: 300, width: 200, height: 20))
+    self.pageControl.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
     self.pageControl.numberOfPages = (self.surveys?.count)!
     self.pageControl.currentPage = 0
-    self.pageControl.tintColor = UIColor.whiteColor()
-    self.pageControl.currentPageIndicatorTintColor = UIColor.whiteColor()
+    self.pageControl.tintColor = UIColor.white
+    self.pageControl.currentPageIndicatorTintColor = UIColor.white
     self.view.addSubview(pageControl)
   }
   
@@ -66,10 +67,10 @@ class SurveyList: UIPageViewController {
   func getSurveys() {
     SwiftSpinner.show("Loading data...")
     
-    SurveyNetworking.sharedInstance.requestSurveyApi({ surveys in
+    SurveyNetworking.sharedInstance.requestSurveyApi({ [unowned self] surveys in
       self.surveys = surveys
       
-      self.setViewControllers([self.getViewControllerAtIndex(0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+      self.setViewControllers([self.getViewControllerAtIndex(0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
       
       SwiftSpinner.hide()
       self.configurePageControl()
@@ -83,12 +84,12 @@ class SurveyList: UIPageViewController {
   // MARK: Helpers Methods
   
   func showErrorAlert() {
-    let alertController = UIAlertController(title: "Error", message: "Cannot download data. Please try again later.", preferredStyle: .Alert)
+    let alertController = UIAlertController(title: "Error", message: "Cannot download data. Please try again later.", preferredStyle: .alert)
     
-    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+    let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
     alertController.addAction(defaultAction)
     
-    self.presentViewController(alertController, animated: true, completion: nil)
+    self.present(alertController, animated: true, completion: nil)
   }
   
 }
@@ -97,13 +98,12 @@ class SurveyList: UIPageViewController {
 
 extension SurveyList: UIPageViewControllerDataSource {
   
-  func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+  func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
 
     let pageContent: SurveyPage = viewController as! SurveyPage
     var index = pageContent.pageIndex
     
-    if ((index == 0) || (index == NSNotFound))
-    {
+    if ((index == 0) || (index == NSNotFound)) {
       return nil
     }
 
@@ -112,39 +112,38 @@ extension SurveyList: UIPageViewControllerDataSource {
     return getViewControllerAtIndex(index)
   }
   
-  func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+  func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
     
     let pageContent: SurveyPage = viewController as! SurveyPage
     var index = pageContent.pageIndex
-    if (index == NSNotFound)
-    {
+    if (index == NSNotFound) {
       return nil;
     }
     
     index += 1;
     
-    if (index == self.surveys!.count)
-    {
+    if (index == self.surveys!.count) {
       return nil;
     }
     
     return getViewControllerAtIndex(index)
   }
   
-  func getViewControllerAtIndex(index: NSInteger) -> SurveyPage {
-    let surveyPage = self.storyboard?.instantiateViewControllerWithIdentifier("SurveyPage") as! SurveyPage
+  func getViewControllerAtIndex(_ index: NSInteger) -> SurveyPage {
+    let surveyPage = self.storyboard?.instantiateViewController(withIdentifier: "SurveyPage") as! SurveyPage
     surveyPage.surveyTitle.text = self.surveys![index].surveyTitle
     surveyPage.surveySubtitle.text = self.surveys![index].surveySubTitle
     
     let surveyImageURL = self.surveys![index].surveyBackgroundImage
-    Alamofire.request(.GET, surveyImageURL!).response { (request, response, data, error) in
-      if error == nil {
-        surveyPage.view.backgroundColor = UIColor.blackColor()
-      }
-      else {
-        surveyPage.view.backgroundColor = UIColor.init(patternImage:  UIImage(data: data!, scale:1)!)
-      }
-    }
+    
+//    Alamofire.request(surveyImageURL!).responseData { response in
+//      if let data = response.result.value {
+//        surveyPage.view.backgroundColor = UIColor.init(patternImage:  UIImage(data: data)!)
+//      }
+//      else {
+//        surveyPage.view.backgroundColor = UIColor.black
+//      }
+//    }
 
     surveyPage.pageIndex = index
     
@@ -157,7 +156,7 @@ extension SurveyList: UIPageViewControllerDataSource {
 
 extension SurveyList: UIPageViewControllerDelegate {
   
-  func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+  func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
     let pageContentViewController = pageViewController.viewControllers![0] as! SurveyPage
     let index = pageContentViewController.pageIndex
     

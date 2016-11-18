@@ -14,7 +14,7 @@ class Survey: Mappable {
   var surveySubTitle : String?
   var surveyBackgroundImage : String?
   
-  required init?(_ map: Map){
+  required init?(map: Map){
   
   }
   

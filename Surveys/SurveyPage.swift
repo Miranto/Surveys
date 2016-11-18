@@ -24,7 +24,7 @@ class SurveyPage: UIViewController {
     super.viewDidLoad()
   }
   
-  override func viewWillAppear(animated: Bool) {
+  override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
     self.setupViews()
@@ -38,8 +38,8 @@ class SurveyPage: UIViewController {
   
   // MARK: IBActions
   
-  @IBAction func startSurvey(sender: AnyObject) {
-    let mapViewControllerObj = self.storyboard?.instantiateViewControllerWithIdentifier("SurveyDetails")
+  @IBAction func startSurvey(_ sender: AnyObject) {
+    let mapViewControllerObj = self.storyboard?.instantiateViewController(withIdentifier: "SurveyDetails")
     self.navigationController?.pushViewController(mapViewControllerObj!, animated: true)
   }
   

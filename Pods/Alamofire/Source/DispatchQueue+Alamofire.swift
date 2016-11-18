@@ -1,12 +1,7 @@
 //
-//  NSDataTransform.swift
-//  ObjectMapper
+//  DispatchQueue+Alamofire.swift
 //
-//  Created by Yagrushkin, Evgeny on 8/30/16.
-//
-//  The MIT License (MIT)
-//
-//  Copyright (c) 2014-2015 Hearst
+//  Copyright (c) 2014-2016 Alamofire Software Foundation (http://alamofire.org/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -25,26 +20,24 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
+//
 
+import Dispatch
 import Foundation
 
-public class NSDataTransform: TransformType {
-	public typealias Object = NSData
-	public typealias JSON = String
-	
-	public init() {}
-	
-	public func transformFromJSON(value: AnyObject?) -> NSData? {
-		guard let string = value as? String else{
-			return nil
-		}
-		return NSData(base64EncodedString: string, options: [])
-	}
-	
-	public func transformToJSON(value: NSData?) -> String? {
-		guard let data = value else{
-			return nil
-		}
-		return data.base64EncodedStringWithOptions([])
-	}
+extension DispatchQueue {
+    static var userInteractive: DispatchQueue { return DispatchQueue.global(qos: .userInteractive) }
+    static var userInitiated: DispatchQueue { return DispatchQueue.global(qos: .userInitiated) }
+    static var utility: DispatchQueue { return DispatchQueue.global(qos: .utility) }
+    static var background: DispatchQueue { return DispatchQueue.global(qos: .background) }
+
+    func after(_ delay: TimeInterval, execute closure: @escaping () -> Void) {
+        asyncAfter(deadline: .now() + delay, execute: closure)
+    }
+
+    func syncResult<T>(_ closure: () -> T) -> T {
+        var result: T!
+        sync { result = closure() }
+        return result
+    }
 }
